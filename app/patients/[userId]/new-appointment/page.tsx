@@ -23,7 +23,6 @@ export default async function NewAppointment({params: {userId}}: SearchParamProp
             type="create"
             userId={userId}
             patientId={patient.$id}
-            setOpen={(open: boolean) => {}} 
             />
             
               <p className="copyright py-5 mt-10">
