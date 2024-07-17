@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import {Form} from "@/components/ui/form"
 import CustomFormField from "../CustomFormField"
 import SubmitButton from "../SubmitButton"
-import { useState } from "react"
 import { getAppointmentSchema } from "@/lib/validation"
 import { useRouter } from "next/navigation"
 import { createUser } from "@/lib/actions/patient.actions"
@@ -18,7 +17,7 @@ import Image from "next/image"
 import { createAppointment, updateAppointment } from "@/lib/actions/appointment.actions"
 import { Appointment } from "@/types/appwrite.types"
 import PreviousMap from "postcss/lib/previous-map"
-
+import { Dispatch, SetStateAction, useState } from "react"
  
 const AppointmentForm = ({
     userId, patientId, type, appointment, setOpen}: {
@@ -26,7 +25,7 @@ const AppointmentForm = ({
       patientId: string; 
       type: "create" | "cancel" | 'schedule';
       appointment?: Appointment;
-      setOpen: (open: boolean) => void;
+      setOpen?: Dispatch<SetStateAction<boolean>>;
     }
 ) => {
   const router = useRouter();
