@@ -11,6 +11,8 @@ import AppointmentModal from "../AppointmentModal"
 import { Appointment } from "@/types/appwrite.types"
 
 
+
+
 export const columns: ColumnDef<Appointment>[] = [
     {
         header: "ID",
@@ -19,7 +21,9 @@ export const columns: ColumnDef<Appointment>[] = [
     {
         accessorKey: "patient",
         header: "Patient",
-        cell: ({ row }) => <p className="text-14-medium">{row.original.patient.name}</p>
+        cell: ({ row }) => { 
+        return <p className="text-14-medium">{row.original.patient.name}</p>
+      }
     },
   {
     accessorKey: "status",
